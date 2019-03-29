@@ -1,3 +1,5 @@
+iOS 一个比较完美 Growing TextView
+
 # GrowTextView
 
 [![CI Status](https://img.shields.io/travis/wuzhenli/GrowTextView.svg?style=flat)](https://travis-ci.org/wuzhenli/GrowTextView)
@@ -77,7 +79,6 @@
 
 
 ## Requirements
-- iOS 6 +,
 - ARC
 
 ## Installation

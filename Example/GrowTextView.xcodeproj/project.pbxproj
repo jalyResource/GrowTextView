@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		0A8453F9224DC1A80023530D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0A8453FA224DC1A80023530D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3B6B3062F3426EBA4D4DB1A8 /* GrowTextView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GrowTextView.podspec; path = ../GrowTextView.podspec; sourceTree = "<group>"; };
+		3B6B3062F3426EBA4D4DB1A8 /* GrowTextView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GrowTextView.podspec; path = ../GrowTextView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4076445D4E06292AA17072D5 /* Pods_GrowTextView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowTextView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* GrowTextView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowTextView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };

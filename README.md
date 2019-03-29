@@ -13,9 +13,11 @@
 ## 主流 App 的输入框之痛
 #### 粘贴文本出现文字偏移
 这个问题严格来说算 bug，毕竟粘贴还是一个很常见的操作。
+
 ![粘贴文本出现文字偏移](http://upload-images.jianshu.io/upload_images/2591472-068f8d87dd118f55.gif?imageMogr2/auto-orient/strip)
 #### 挡住部分文字
 这个问题对 App 功能没有任何影响，但这么多 App 竟然都有这个问题而且非常普遍，是我始料未及的。测试了多个 App 后，只有QQ的输入框做的最好，粘贴、遮挡文字等问题根本不存在。
+
 ![1_zhiHu_cover.PNG](https://upload-images.jianshu.io/upload_images/2591472-1db755cd275d8263.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![weiBo_cover.PNG](https://upload-images.jianshu.io/upload_images/2591472-82b1d4fafda8a002.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![touTiao_cover.PNG](https://upload-images.jianshu.io/upload_images/2591472-ff9addae3cd858a4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -66,6 +68,7 @@
 
 ## GrowTextView
 接下来就是我自己写的自增高输入框了，目前没发现什么问题，至少没有上面涉及的问题。
+
 ![jl_txv_addLine.gif](https://upload-images.jianshu.io/upload_images/2591472-5a95c3f4c6e81e37.gif?imageMogr2/auto-orient/strip)
 ![jl_txv_paster.gif](https://upload-images.jianshu.io/upload_images/2591472-754d34bb3c0c126c.gif?imageMogr2/auto-orient/strip)
 

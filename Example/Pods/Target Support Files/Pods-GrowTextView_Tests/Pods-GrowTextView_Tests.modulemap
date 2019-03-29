@@ -1,0 +1,6 @@
+framework module Pods_GrowTextView_Tests {
+  umbrella header "Pods-GrowTextView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

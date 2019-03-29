@@ -1,0 +1,6 @@
+framework module GrowTextView {
+  umbrella header "GrowTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8453FB224DC1A80023530D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8453FA224DC1A80023530D /* ViewController.m */; };
 		577C6040DAD702F129E9247A /* Pods_GrowTextView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C22C5D05095FD0B2661C518D /* Pods_GrowTextView_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -14,7 +15,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* JLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* JLAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* JLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* JLViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -37,7 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B6B3062F3426EBA4D4DB1A8 /* GrowTextView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GrowTextView.podspec; path = ../GrowTextView.podspec; sourceTree = "<group>"; };
+		0A8453F9224DC1A80023530D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0A8453FA224DC1A80023530D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B6B3062F3426EBA4D4DB1A8 /* GrowTextView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GrowTextView.podspec; path = ../GrowTextView.podspec; sourceTree = "<group>"; };
 		4076445D4E06292AA17072D5 /* Pods_GrowTextView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowTextView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* GrowTextView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowTextView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,8 +51,6 @@
 		6003F59B195388D20070C39A /* GrowTextView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrowTextView-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* JLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* JLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* JLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* JLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* GrowTextView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrowTextView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,9 +61,9 @@
 		68C12890C4177E801A478070 /* Pods-GrowTextView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowTextView_Tests.release.xcconfig"; path = "Target Support Files/Pods-GrowTextView_Tests/Pods-GrowTextView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		899C97043D36367E8F179973 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		899C97043D36367E8F179973 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A0766D28A8FEEE6A6D555E7A /* Pods-GrowTextView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowTextView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GrowTextView_Tests/Pods-GrowTextView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A9DED7E73A4B14C52D2858A6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A9DED7E73A4B14C52D2858A6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C22C5D05095FD0B2661C518D /* Pods_GrowTextView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GrowTextView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE158150EF12824E3B13EA44 /* Pods-GrowTextView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowTextView_Example.release.xcconfig"; path = "Target Support Files/Pods-GrowTextView_Example/Pods-GrowTextView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FF9A1B79CEFFB9F4A6FC0F92 /* Pods-GrowTextView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrowTextView_Example.debug.xcconfig"; path = "Target Support Files/Pods-GrowTextView_Example/Pods-GrowTextView_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +103,6 @@
 				A0766D28A8FEEE6A6D555E7A /* Pods-GrowTextView_Tests.debug.xcconfig */,
 				68C12890C4177E801A478070 /* Pods-GrowTextView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,8 +146,8 @@
 				6003F59C195388D20070C39A /* JLAppDelegate.h */,
 				6003F59D195388D20070C39A /* JLAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* JLViewController.h */,
-				6003F5A6195388D20070C39A /* JLViewController.m */,
+				0A8453F9224DC1A80023530D /* ViewController.h */,
+				0A8453FA224DC1A80023530D /* ViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -248,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = wuzhenli;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 294Q8452TK;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -258,6 +260,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -369,7 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* JLAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* JLViewController.m in Sources */,
+				0A8453FB224DC1A80023530D /* ViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +501,7 @@
 			baseConfigurationReference = FF9A1B79CEFFB9F4A6FC0F92 /* Pods-GrowTextView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294Q8452TK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowTextView/GrowTextView-Prefix.pch";
 				INFOPLIST_FILE = "GrowTextView/GrowTextView-Info.plist";
@@ -513,6 +517,7 @@
 			baseConfigurationReference = EE158150EF12824E3B13EA44 /* Pods-GrowTextView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 294Q8452TK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrowTextView/GrowTextView-Prefix.pch";
 				INFOPLIST_FILE = "GrowTextView/GrowTextView-Info.plist";

@@ -1,4 +1,4 @@
-iOS 一个比较完美 Growing TextView
+iOS 一个比较完美 Growing TextView（高度自适应输入框）
 
 # GrowTextView
 
@@ -82,8 +82,16 @@ iOS 一个比较完美 Growing TextView
 - ARC
 
 ## Installation
-
+#### Manual
 Add `JLTextContentView.h/m` and `JLTextView.h/m` to your project.
+
+#### Cocoapods. [Recommand]
+Base is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'GrowTextView', '~> 1.0'
+```
 
 ## Author
 

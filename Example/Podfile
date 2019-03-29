@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'GrowTextView_Example' do
+  pod 'GrowTextView', :path => '../'
+
+  target 'GrowTextView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

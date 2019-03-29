@@ -78,6 +78,10 @@ iOS 一个比较完美 Growing TextView（高度自适应输入框）
 - [GrowTextView](https://github.com/jalyResource/GrowTextView)
 
 
+[Reference]
+- [JSQMessagesViewController](https://github.com/jessesquires/JSQMessagesViewController)
+- [袁峥-textView自适应文字高度](https://www.jianshu.com/p/55d98e8f3e61)
+
 ## Requirements
 - ARC
 

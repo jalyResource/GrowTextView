@@ -1,4 +1,4 @@
-iOS 一个比较完美 Growing TextView（高度自适应输入框）
+iOS 一个比较完美的 Growing TextView（高度自适应输入框）
 
 # GrowTextView
 

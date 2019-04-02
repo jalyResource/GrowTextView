@@ -13,8 +13,9 @@
 #import "ViewController.h"
 #import "JLTextContentView.h"
 
-//[UIScreen mainScreen].bounds.size.width
+
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 
 @interface ViewController ()<JLTextContentViewDatasource>
 
@@ -26,8 +27,10 @@
 @property (strong, nonatomic) NSLayoutConstraint *consInputBarBottom;
 
 @property (assign, nonatomic) BOOL isAddKVO;
+@property (assign, nonatomic) CGFloat heightSystemKeyboard;
 
 @end
+
 
 @implementation ViewController
 
@@ -37,59 +40,39 @@
     _textContentView = [JLTextContentView inputWiewWithDatasource:self];
     [self.inputBar addSubview:_textContentView];
     
-    self.textContentView.translatesAutoresizingMaskIntoConstraints = NO;
-    UIView *txvSuper = self.textContentView.superview;
-    
-    [NSLayoutConstraint constraintWithItem:self.textContentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:txvSuper attribute:NSLayoutAttributeLeft multiplier:1 constant:10].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.textContentView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:txvSuper attribute:NSLayoutAttributeRight multiplier:1 constant:-10].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.textContentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:txvSuper attribute:NSLayoutAttributeBottom multiplier:1 constant:-8].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.textContentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:txvSuper attribute:NSLayoutAttributeTop multiplier:1 constant:8].active = YES;
-    
-
-    self.inputBar.translatesAutoresizingMaskIntoConstraints = NO;
-    [NSLayoutConstraint constraintWithItem:self.inputBar attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.inputBar.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:0].active = YES;
-    [NSLayoutConstraint constraintWithItem:self.inputBar attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.inputBar.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0].active = YES;
-    self.consInputBarBottom = [NSLayoutConstraint constraintWithItem:self.inputBar attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.inputBar.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-    self.consInputBarBottom.active = YES;
-    
+    [self addConstraints];
     [self addNotification:YES];
     
 }
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-}
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
+
 - (void)dealloc {
     [self addNotification:NO];
-}
-- (void)addNotification:(BOOL)isAdd {
-    if (isAdd) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    } else {
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
-    }
 }
 
 #pragma -mark event response
 
 - (void)keyboardWillChangeFrameNotification:(NSNotification *)notification {
-    if (! self.textContentView.textView.isFirstResponder) {
-        return;
-    }
+    if (! self.textContentView.textView.isFirstResponder)  return;
     
     CGRect endRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat offY = SCREEN_HEIGHT - endRect.origin.y;
-    NSTimeInterval time = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    if (self.heightSystemKeyboard == offY)
+        return;
+    
+    self.heightSystemKeyboard = offY;
+    
+    NSTimeInterval duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve animationCurve = [notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    CGFloat animationCurveOption = (animationCurve << 16);
     
     self.consInputBarBottom.constant = -offY;
-    [UIView animateWithDuration:time animations:^{
+    [UIView animateWithDuration:duration delay:0 options:animationCurveOption animations:^{
         [self.view setNeedsLayout];
         [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
     }];
 }
+
 #pragma -mark JLInputViewDelegate
 
 /**
@@ -116,7 +99,76 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
     NSLog(@"contentSize:%@", NSStringFromCGSize(self.textContentView.textView.contentSize));
+}
+
+
+#pragma -mark private
+
+- (void)addConstraints {
+    self.textContentView.translatesAutoresizingMaskIntoConstraints = NO;
+    UIView *txvSuper = self.textContentView.superview;
     
+    [NSLayoutConstraint constraintWithItem:self.textContentView
+                                 attribute:NSLayoutAttributeLeft
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:txvSuper
+                                 attribute:NSLayoutAttributeLeft
+                                multiplier:1
+                                  constant:10].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.textContentView
+                                 attribute:NSLayoutAttributeRight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:txvSuper
+                                 attribute:NSLayoutAttributeRight
+                                multiplier:1
+                                  constant:-10].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.textContentView
+                                 attribute:NSLayoutAttributeBottom
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:txvSuper
+                                 attribute:NSLayoutAttributeBottom
+                                multiplier:1
+                                  constant:-8].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.textContentView
+                                 attribute:NSLayoutAttributeTop
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:txvSuper
+                                 attribute:NSLayoutAttributeTop
+                                multiplier:1
+                                  constant:8].active = YES;
+    
+    
+    self.inputBar.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint constraintWithItem:self.inputBar
+                                 attribute:NSLayoutAttributeLeft
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.inputBar.superview
+                                 attribute:NSLayoutAttributeLeft
+                                multiplier:1
+                                  constant:0].active = YES;
+    [NSLayoutConstraint constraintWithItem:self.inputBar
+                                 attribute:NSLayoutAttributeRight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self.inputBar.superview
+                                 attribute:NSLayoutAttributeRight
+                                multiplier:1
+                                  constant:0].active = YES;
+    self.consInputBarBottom = [NSLayoutConstraint constraintWithItem:self.inputBar
+                                                           attribute:NSLayoutAttributeBottom
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:self.inputBar.superview
+                                                           attribute:NSLayoutAttributeBottom
+                                                          multiplier:1
+                                                            constant:0];
+    self.consInputBarBottom.active = YES;
+}
+
+- (void)addNotification:(BOOL)isAdd {
+    if (isAdd) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    } else {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    }
 }
 
 

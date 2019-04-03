@@ -109,7 +109,13 @@
     }
     //    NSLog(@"newHeight:%lf", newHeight);
     // update the height constraint
-    self.heightConstraint.constant = newHeight;
+    if ((NSInteger)(newHeight * 1000) != (NSInteger)(self.heightConstraint.constant * 1000)) {
+        self.heightConstraint.constant = newHeight;
+        
+        if (self.heightChangeBlock) {
+            [UIView animateWithDuration:0.2 delay:0 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:self.heightChangeBlock completion:nil];
+        }
+    }
 }
 
 #pragma mark - Composer text view
@@ -249,7 +255,7 @@
 }
 
 - (void)jl_didReceiveTextViewNotification:(NSNotification *)notification
-{
+{   
     [self setNeedsDisplay];
     [self autoAdjustContentHeight];
 }

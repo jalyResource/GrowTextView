@@ -34,6 +34,7 @@
 
 @property (strong, nonatomic, readonly) JLTextView *textView;
 
+
 @end
 
 

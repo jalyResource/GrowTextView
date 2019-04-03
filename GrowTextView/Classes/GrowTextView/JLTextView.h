@@ -27,6 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (assign, nonatomic) UIEdgeInsets placeHolderInsets;
 
+
+/**
+ When TextView height changed will call this block. You can set height changed animation 
+ in this block call - (void)layoutIfNeeded.
+ */
+@property (copy, nonatomic, nullable) void(^heightChangeBlock)(void);
+
 /**
  *  Determines whether or not the text view contains text after trimming white space
  *  from the front and back of its string.
@@ -36,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 //- (BOOL)hasText;
 
 - (void)associateConstraints ;
+
 @end
 
 NS_ASSUME_NONNULL_END

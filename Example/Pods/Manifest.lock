@@ -1,5 +1,5 @@
 PODS:
-  - GrowTextView (0.1.0)
+  - GrowTextView (1.0)
 
 DEPENDENCIES:
   - GrowTextView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GrowTextView: c5a20c6744fc972d400820800acffdfdd9b630f6
+  GrowTextView: cca00b2b2f9c7899e4ce32f82fbf423ae1f4791c
 
 PODFILE CHECKSUM: f1c07a0b74e0dbb55efa98aab0027e72fcbcbe92
 

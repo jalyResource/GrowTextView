@@ -40,6 +40,14 @@
     _textContentView = [JLTextContentView inputWiewWithDatasource:self];
     [self.inputBar addSubview:_textContentView];
     
+    __weak typeof(self) ws = self;
+    NSLog(@"textView:%@", self.textContentView.textView);
+//    
+    self.textContentView.textView.heightChangeBlock = ^{
+        [ws.view layoutIfNeeded];
+    };
+    
+    
     [self addConstraints];
     [self addNotification:YES];
     

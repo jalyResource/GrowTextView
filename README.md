@@ -1,9 +1,10 @@
 iOS 一个比较完美的 Growing TextView（高度自适应输入框）
-<img alt="jl_txv_addLine.gif" src="https://upload-images.jianshu.io/upload_images/2591472-5a95c3f4c6e81e37.gif?imageMogr2/auto-orient/strip" width="300" /img> 
-<img alt="jl_txv_paster.gif" src="https://upload-images.jianshu.io/upload_images/2591472-754d34bb3c0c126c.gif?imageMogr2/auto-orient/strip" width="300 /img>
-<br />
 
---
+<img src="https://upload-images.jianshu.io/upload_images/2591472-5a95c3f4c6e81e37.gif?imageMogr2/auto-orient/strip" width="250" /> 
+&nbsp;&nbsp;<img src="https://upload-images.jianshu.io/upload_images/2591472-754d34bb3c0c126c.gif?imageMogr2/auto-orient/strip" width="250 />
+
+
+-
 
 # GrowTextView
 

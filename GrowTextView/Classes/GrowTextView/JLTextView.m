@@ -92,8 +92,6 @@
 
 
 - (void)autoAdjustContentHeight {
-    //    [super layoutSubviews];
-    
     // calculate size needed for the text to be visible without scrolling
     CGSize sizeThatFits = [self sizeThatFits:self.frame.size];
     CGFloat newHeight = sizeThatFits.height;
@@ -117,8 +115,6 @@
         }
     }
 }
-
-#pragma mark - Composer text view
 
 #pragma mark - Setters
 

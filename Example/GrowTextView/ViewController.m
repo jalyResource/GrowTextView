@@ -17,7 +17,7 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
-@interface ViewController ()<JLTextContentViewDatasource>
+@interface ViewController ()<JLTextContentViewDatasource, UITextPasteDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *inputBar;
 
@@ -41,11 +41,10 @@
     [self.inputBar addSubview:_textContentView];
     
     __weak typeof(self) ws = self;
-    NSLog(@"textView:%@", self.textContentView.textView);
-//    
     self.textContentView.textView.heightChangeBlock = ^{
         [ws.view layoutIfNeeded];
     };
+    self.textContentView.textView.pasteDelegate = self;
     
     
     [self addConstraints];
@@ -103,6 +102,23 @@
     return 4;
 }
 
+#pragma -mark UITextPasteDelegate
+
+/*
+ fix issue #1 :https://github.com/jalyResource/GrowTextView/issues/1
+ reference : https://stackoverflow.com/questions/51770900/uitextview-stange-animation-glitch-on-paste-action-ios11
+ */
+/* By default, the standard text controls will animate pasting or dropping text.
+ * If you don't want this to happen for a certain paste or range, you can implement
+ * this method and return false here.
+ *
+ * If you don't implement this, the default is true.
+ */
+- (BOOL)textPasteConfigurationSupporting:(id<UITextPasteConfigurationSupporting>)textPasteConfigurationSupporting shouldAnimatePasteOfAttributedString:(NSAttributedString*)attributedString toRange:(UITextRange*)textRange  API_AVAILABLE(ios(11.0)){
+    return NO;
+}
+
+#pragma -mark override
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];

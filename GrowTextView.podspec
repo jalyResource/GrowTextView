@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GrowTextView'
-  s.version          = '1.0'
+  s.version          = '1.1'
   s.summary          = 'iOS 一个比较完美的 Growing TextView（高度自适应输入框）'
 
 # This description is used to generate tags and improve search results.

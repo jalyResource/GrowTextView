@@ -1,4 +1,9 @@
 iOS 一个比较完美的 Growing TextView（高度自适应输入框）
+<img alt="jl_txv_addLine.gif" src="https://upload-images.jianshu.io/upload_images/2591472-5a95c3f4c6e81e37.gif?imageMogr2/auto-orient/strip" width="300" /img> 
+<img alt="jl_txv_paster.gif" src="https://upload-images.jianshu.io/upload_images/2591472-754d34bb3c0c126c.gif?imageMogr2/auto-orient/strip" width="300 /img>
+<br />
+
+--
 
 # GrowTextView
 
@@ -70,9 +75,6 @@ iOS 一个比较完美的 Growing TextView（高度自适应输入框）
 
 ## GrowTextView
 接下来就是我自己写的自增高输入框了，目前没发现什么问题，至少没有上面涉及的问题。
-
-![jl_txv_addLine.gif](https://upload-images.jianshu.io/upload_images/2591472-5a95c3f4c6e81e37.gif?imageMogr2/auto-orient/strip)
-![jl_txv_paster.gif](https://upload-images.jianshu.io/upload_images/2591472-754d34bb3c0c126c.gif?imageMogr2/auto-orient/strip)
 
 
 - [GrowTextView](https://github.com/jalyResource/GrowTextView)

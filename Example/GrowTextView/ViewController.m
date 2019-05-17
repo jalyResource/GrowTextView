@@ -44,7 +44,10 @@
     self.textContentView.textView.heightChangeBlock = ^{
         [ws.view layoutIfNeeded];
     };
-    self.textContentView.textView.pasteDelegate = self;
+    
+    if ([self.textContentView.textView respondsToSelector:NSSelectorFromString(@"pasteDelegate")]) {
+        self.textContentView.textView.pasteDelegate = self;
+    }
     
     
     [self addConstraints];

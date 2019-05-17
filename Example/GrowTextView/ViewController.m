@@ -44,7 +44,10 @@
     self.textContentView.textView.heightChangeBlock = ^{
         [ws.view layoutIfNeeded];
     };
-    self.textContentView.textView.pasteDelegate = self;
+    
+    if (@available(iOS 11, *)) {
+        self.textContentView.textView.pasteDelegate = self;
+    }
     
     
     [self addConstraints];
